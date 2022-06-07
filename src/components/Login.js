@@ -25,8 +25,8 @@ export default function Login({ setToken }) {
           return;
         }
         console.log(data.token);
+        localStorage.setItem("token", data.token);
         setToken(data.token);
-        // do more.....
       })
       .catch((err) => console.log(err));
   };
