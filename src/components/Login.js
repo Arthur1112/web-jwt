@@ -1,8 +1,14 @@
 import { Form, Button, Input } from "antd";
+import bcrypt from "bcryptjs";
+
+const salt = "$2b$10$3c22hEeSjfAnsuZ76BHS0O";
+
+//const salt = bcrypt.genSaltSync(10)
 
 export default function Login() {
   const handleLogin = ({ email, password }) => {
     console.log(email, password);
+    const hash = bcrypt.hashSync(password, salt);
     fetch("http://localhost:5050/login", {
       method: "POST",
       headers: {
