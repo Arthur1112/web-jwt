@@ -11,7 +11,7 @@ export default function Login() {
         <Form.Item name="password" label="Password">
           <Input.Password />
         </Form.Item>
-        <Form.Item labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
+        <Form.Item wrapperCol={{ span: 16, offset: 8 }}>
           <Button type="primary" htmlType="submit">
             Login
           </Button>
