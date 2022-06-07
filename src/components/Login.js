@@ -3,6 +3,13 @@ import { Form, Button, Input } from "antd";
 export default function Login() {
   const handleLogin = ({ email, password }) => {
     console.log(email, password);
+    fetch("http://localhost:5050/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
   };
   return (
     <>
