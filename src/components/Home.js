@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Alert } from "antd";
+import { Alert, Button } from "antd";
 
 export default function Home() {
   const [message, setMessage] = useState("");
@@ -9,6 +9,7 @@ export default function Home() {
       <h1>Home</h1>
       {message && <Alert message={message} type="success" />}
       {error && <Alert message={error} type="error" />}
+      <Button>Get Private Stuff</Button>
     </>
   );
 }
