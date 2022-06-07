@@ -7,6 +7,8 @@ export default function Home() {
   return (
     <>
       <h1>Home</h1>
+      {message && <Alert message={message} type="success" />}
+      {error && <Alert message={error} type="error" />}
     </>
   );
 }
