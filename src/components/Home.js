@@ -5,7 +5,7 @@ export default function Home() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const getPrivateStuff = () => {
-    fetch("http://localhost:5050/login")
+    fetch("http://localhost:5050/private")
       .then((res) => res.json())
       .then((data) => {
         if (data.error) {
@@ -23,7 +23,7 @@ export default function Home() {
       <h1>Home</h1>
       {message && <Alert message={message} type="success" />}
       {error && <Alert message={error} type="error" />}
-      <Button type="primary" size="large">
+      <Button onClick={getPrivateStuff} type="primary" size="large">
         Get Private Stuff
       </Button>
     </>
