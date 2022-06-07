@@ -6,7 +6,7 @@ const salt = "$2b$10$3c22hEeSjfAnsuZ76BHS0O";
 // Have to use the same SALT for pw
 //const salt = bcrypt.genSaltSync(10)
 
-export default function Login() {
+export default function Login({ setToken }) {
   const handleLogin = ({ email, password }) => {
     console.log(email, password);
     const hash = bcrypt.hashSync(password, salt);
@@ -25,6 +25,8 @@ export default function Login() {
           return;
         }
         console.log(data.token);
+        setToken(data.token);
+        // do more.....
       })
       .catch((err) => console.log(err));
   };
