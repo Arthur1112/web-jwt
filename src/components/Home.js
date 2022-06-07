@@ -9,7 +9,9 @@ export default function Home() {
       <h1>Home</h1>
       {message && <Alert message={message} type="success" />}
       {error && <Alert message={error} type="error" />}
-      <Button>Get Private Stuff</Button>
+      <Button type="primary" size="large">
+        Get Private Stuff
+      </Button>
     </>
   );
 }
